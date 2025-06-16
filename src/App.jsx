@@ -1,4 +1,4 @@
-import Portfolio from "./views/portfolio"
+import Portfolio from "./views/Portfolio"
 import "./styles/globals.css"
 
 function App() {
