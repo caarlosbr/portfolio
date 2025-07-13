@@ -37,6 +37,8 @@ import prueba from "../assets/prueba.png"
 import casa from "../assets/casasrurales.png"
 import cara from "../assets/logo_cara.jpg"
 import curri from "../assets/CurrículumCarlosBorreguero.pdf"
+import prueba215 from "../assets/prueba215.png"
+import prueba214 from "../assets/prueba214.png"
 
 const projects = [
   {
@@ -44,7 +46,7 @@ const projects = [
     title: "MyHandStats",
     description:
       "MyHandStats es una aplicación que permite a clubes y entrandores de balonmano registrar estadísticas en tiempo real y analizarlas para mejorar el rendimiento del equipo",
-    image: imgMyHandStats,
+    image: prueba215,
     technologies: ["React", "ChakraUI", "FastAPI", "Figma", "PostgreSQL", "Netlify", "Supabase"],
     github: "https://github.com/pmerida08/myHandStats",
     demo: "https://myhandstats.netlify.app/",
@@ -53,6 +55,17 @@ const projects = [
   },
   {
     id: 2,
+    title: "MyHandStatsMatch",
+    description: "MyHandStatsMatch es una aplicación que permite a los clubes y entrenadores de balonmano registrar estadísticas de los partidos en tiempo real y analizarlas para mejorar el rendimiento del equipo",
+    image: imgMyHandStats,
+    technologies: ["React", "ChakraUI", "FastAPI", "Figma", "PostgreSQL", "Netlify", "Supabase"],
+    github: "https://github.com/caarlosbr/MyHandStatsPartido",
+    demo: "https://myhandstatsmatch.netlify.app/",
+    gradient: "from-red-500 via-pink-500 to-purple-500",
+    glowColor: "shadow-red-500/50",
+  },
+  {
+    id: 3,
     title: "Casas Rurales",
     description: "CasasRurales es una web que permite a los usuarios encontrar casas rurales (simulación Airbnb)",
     image: casa,
@@ -69,7 +82,7 @@ const developingProjects = [
     id: 1,
     title: "StadisticsRA",
     description: "App móvil de entrenamiento de gimnasio con estadísticas avanzadas y seguimiento de progresos",
-    image: prueba,
+    image: prueba214,
     technologies: ["React", "NodeJS", "ChakraUI", "Figma"],
     github: "https://github.com/caarlosbr/StadisticsRA",
     gradient: "from-orange-400 via-pink-500 to-red-500",
@@ -326,11 +339,10 @@ function ProjectCard({ project, index, darkMode }) {
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <button
                   onClick={() => setViewMode("desktop")}
-                  className={`p-3 rounded-md transition-all duration-300 ${
-                    viewMode === "desktop"
+                  className={`p-3 rounded-md transition-all duration-300 ${viewMode === "desktop"
                       ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
                       : `${darkMode ? "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white" : "bg-gray-200 text-gray-600 hover:bg-gray-300 hover:text-gray-800"}`
-                  }`}
+                    }`}
                 >
                   <Monitor className="w-5 h-5" />
                 </button>
@@ -338,11 +350,10 @@ function ProjectCard({ project, index, darkMode }) {
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <button
                   onClick={() => setViewMode("mobile")}
-                  className={`p-3 rounded-md transition-all duration-300 ${
-                    viewMode === "mobile"
+                  className={`p-3 rounded-md transition-all duration-300 ${viewMode === "mobile"
                       ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
                       : `${darkMode ? "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white" : "bg-gray-200 text-gray-600 hover:bg-gray-300 hover:text-gray-800"}`
-                  }`}
+                    }`}
                 >
                   <Smartphone className="w-5 h-5" />
                 </button>
@@ -530,10 +541,10 @@ export default function Portfolio() {
                 className={`flex items-center gap-1 p-2 rounded-2xl ${darkMode ? "bg-white/5" : "bg-black/5"} backdrop-blur-xl border ${darkMode ? "border-white/10" : "border-black/10"}`}
               >
                 {[
-                  { name: "Inicio", href: "#inicio", icon: <Home/> },
-                  { name: "Sobre mí", href: "#sobremi", icon: <User/> },
-                  { name: "Proyectos", href: "#proyectos", icon: <Folders/> },
-                  { name: "Contacto", href: "#contacto", icon: <Contact/> },
+                  { name: "Inicio", href: "#inicio", icon: <Home /> },
+                  { name: "Sobre mí", href: "#sobremi", icon: <User /> },
+                  { name: "Proyectos", href: "#proyectos", icon: <Folders /> },
+                  { name: "Contacto", href: "#contacto", icon: <Contact /> },
                 ].map((item, i) => (
                   <motion.a
                     key={item.name}
@@ -677,7 +688,7 @@ export default function Portfolio() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1 }}
                 >
-                  Buenas soy Carlos, un apasionado desarrollador web, actualmente estudiando ML y IA, y Bienvenido a mi
+                  Buenas soy Carlos, un apasionado desarrollador web, actualmente estudiando IA y Big Data, y Bienvenido a mi
                   Portfolio
                 </motion.p>
                 <motion.div
@@ -1049,35 +1060,43 @@ export default function Portfolio() {
                   icon: Linkedin,
                   label: "LinkedIn",
                   href: "https://www.linkedin.com/in/carlos-borreguero-540823296/",
-                  color: "from-blue-500 to-cyan-500",
+                  color: "from-sky-600 to-sky-400",
                 },
                 {
                   icon: Github,
                   label: "GitHub",
                   href: "https://github.com/caarlosbr",
-                  color: "from-gray-500 to-gray-700",
+                  color: "from-gray-700 to-gray-500",
                 },
-              ].map((contact, index) => (
-                <motion.div
-                  key={contact.label}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <a
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center px-8 py-4 bg-gradient-to-r ${contact.color} text-white text-lg rounded-md hover:shadow-2xl hover:shadow-current/25 transition-all duration-300`}
+
+              ].map((contact, index) => {
+                const isMailto = contact.href.startsWith("mailto:")
+                const targetProps = isMailto
+                  ? {}
+                  : { target: "_blank", rel: "noopener noreferrer" }
+
+                return (
+                  <motion.div
+                    key={contact.label}
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true }}
                   >
-                    <contact.icon className="w-6 h-6 mr-3" />
-                    {contact.label}
-                  </a>
-                </motion.div>
-              ))}
+                    <a
+                      href={contact.href}
+                      {...targetProps}
+                      className={`inline-flex items-center px-8 py-4 bg-gradient-to-r ${contact.color} text-white text-lg rounded-md hover:shadow-2xl hover:shadow-current/25 transition-all duration-300`}
+                    >
+                      <contact.icon className="w-6 h-6 mr-3" />
+                      {contact.label}
+                    </a>
+                  </motion.div>
+                )
+              })}
+
             </div>
           </motion.div>
         </div>
